@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#111111">
+    <title>УУТЭ — Приборы учета</title>
+    <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
+  </head>
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
+  <div class="container header__container">
+    <div class="header_logo logo">
+      <picture class="logo__img">
+        <source srcset="img/logo.webp" type="image/webp" />
+        <img
+          loading="lazy"
+          src="img/logo.png"
+          class="image"
+          width="183.75"
+          height="60"
+          alt="logo"
+        />
+      </picture>
+      <p class="logo__text">
+        Для председателей и УК<br />
+        многоквартирных домов
+      </p>
+    </div>
+    <div class="header__items items-header">
+      <button
+        class="btn-reset items-header__town-btn town-btn"
+        data-path="town"
+      >
+        <img class="town-btn__img" src="img/map_pin.svg" alt="map pin" />
+        <span class="town-btn__text">Пермь</span>
+      </button>
+      <div class="modal" data-target="town">
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div class="modal__content town-content">
+            <h3 class="town-content__header">Выберите ближайший город:</h3>
+            <div class="town-content__main">
+              <ul class="town-content__list">
+                В
+                <li class="town-content__item">Великий Новгород</li>
+                <li class="town-content__item">Владимир</li>
+                <li class="town-content__item">Волгоград</li>
+                <li class="town-content__item">Вологда</li>
+              </ul>
+              <ul class="town-content__list">
+                Е
+                <li class="town-content__item">Екатеринбург</li>
+              </ul>
+              <ul class="town-content__list">
+                И
+                <li class="town-content__item">Ижевск</li>
+              </ul>
+              <ul class="town-content__list">
+                К
+                <li class="town-content__item">Казань</li>
+                <li class="town-content__item">Киров</li>
+                <li class="town-content__item">Курган</li>
+              </ul>
+              <ul class="town-content__list">
+                М
+                <li class="town-content__item">Москва</li>
+              </ul>
+              <ul class="town-content__list">
+                Н
+                <li class="town-content__item">Нижний Новгород</li>
+                <li class="town-content__item">Нижний Тагил</li>
+                <li class="town-content__item">Новосибирск</li>
+              </ul>
+              <ul class="town-content__list">
+                О
+                <li class="town-content__item">Омск</li>
+                <li class="town-content__item">Оренбург</li>
+              </ul>
+
+              <ul class="town-content__list">
+                П
+                <li class="town-content__item">Пенза</li>
+                <li class="town-content__item">Пермь</li>
+              </ul>
+              <ul class="town-content__list">
+                Р
+                <li class="town-content__item">Рязань</li>
+              </ul>
+              <ul class="town-content__list">
+                С
+                <li class="town-content__item">Самара</li>
+                <li class="town-content__item">Санкт-Петербург</li>
+                <li class="town-content__item">Саранск</li>
+                <li class="town-content__item">Саратов</li>
+              </ul>
+
+              <ul class="town-content__list">
+                Т
+                <li class="town-content__item">Тверь</li>
+                <li class="town-content__item">Тольятти</li>
+                <li class="town-content__item">Тула</li>
+                <li class="town-content__item">Тюмень</li>
+              </ul>
+              <ul class="town-content__list">
+                У
+                <li class="town-content__item">Ульяновск</li>
+                <li class="town-content__item">Уфа</li>
+              </ul>
+              <ul class="town-content__list">
+                Ч
+                <li class="town-content__item">Чебоксары</li>
+                <li class="town-content__item">Челябинск</li>
+                <li class="town-content__item">Череповец</li>
+              </ul>
+
+              <ul class="town-content__list">
+                Я
+                <li class="town-content__item">Ярославль</li>
+              </ul>
+            </div>
+            <h3 class="town-content__footer">Работаем по всему региону</h3>
+          </div>
+        </div>
+      </div>
+      <div class="items-header__tel tel">
+        <div class="tel__inner">
+          <a href="tel:+70000000000" class="tel__link">+7 (000-00) 0-00-00</a>
+          <button class="btn-reset tel__btn" data-graph-path="callback">
+            Заказать обратный звонок
+          </button>
+          <div class="graph-modal tel__modal modal-tel">
+            <div
+              class="modal-tel__container graph-modal__container"
+              role="dialog"
+              aria-modal="true"
+              data-graph-target="callback"
+            >
+              <button
+                class="btn-reset js-modal-close modal-tel__close graph-modal__close"
+                aria-label="Закрыть модальное окно"
+              ></button>
+              <div class="modal-tel__content">
+                <span class="modal-tel__title">Заказать звонок</span>
+                <form action="#" class="form-callback">
+                  <label class="form-callback__label">
+                    <input
+                      type="text"
+                      name="телефон"
+                      class="input-reset form-callback__input"
+                      placeholder="Телефон*"
+                      required
+                    />
+                  </label>
+                  <div class="form-callback__dropdown dropdown">
+                    <button type="button" class="dropdown__button">
+                      Выберите вид работ:
+                    </button>
+                    <img
+                      src="img/svg/chevron_down.svg"
+                      alt="close"
+                      class="dropdown__icon"
+                    />
+                    <ul class="dropdown__list">
+                      <li
+                        class="dropdown__list-item"
+                        data-value="Проектирование"
+                      >
+                        Проектирование
+                      </li>
+                      <li class="dropdown__list-item" data-value="Монтаж">
+                        Монтаж
+                      </li>
+                      <li class="dropdown__list-item" data-value="Консультация">
+                        Консультация
+                      </li>
+                      <li class="dropdown__list-item" data-value="Другое">
+                        Другое
+                      </li>
+                    </ul>
+                    <input
+                      type="text"
+                      name="select-category"
+                      value=""
+                      class="dropdown__input-hidden"
+                      required
+                    />
+                  </div>
+                  <label class="custom-checkbox">
+                    <input
+                      type="checkbox"
+                      checked
+                      disabled
+                      class="custom-checkbox__field"
+                      required
+                    />
+                    <span class="custom-checkbox__content"
+                      >Согласие на обработку персональных данных</span
+                    >
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" class="custom-checkbox__field" />
+                    <span class="custom-checkbox__content">Я не робот</span>
+                  </label>
+                  <button type="submit" class="btn-reset form-callback__btn btn">
+                    Отправить
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <div class="header-menu">
+  <div class="header-menu__container">
+    <div class="container">
+      <menu class="header-menu__list">
+        <li class="header-menu__item">
+          <a href="index.html" class="header-menu__link">О компании</a>
+        </li>
+        <li class="header-menu__item services">
+          <a href="service-main.html" class="header-menu__link"
+            >Услуги
+            <svg class="header-menu__icon">
+              <use xlink:href="img/sprite.svg#arrow_down"></use>
+            </svg>
+          </a>
+          <ul class="services__list">
+            <li class="services__item item-services">
+              <a href="teplovyye_punkty.html" class="services__link"
+                >Тепловые пункты</a
+              >
+              <svg class="item-services__icon">
+                <use xlink:href="img/sprite.svg#chevron_right"></use>
+              </svg>
+              <ul class="item-services__list">
+                <li class="item-services__part part-services">
+                  <a href="ctp.html" class="item-service__link">ЦТП</a>
+                  <svg class="item-services__icon">
+                    <use xlink:href="img/sprite.svg#chevron_right"></use>
+                  </svg>
+                  <ul ul class="part-services__list">
+                    <li class="part-services__item">
+                      <a href="ctp-ustanovka.html" class="part-services__link"
+                        >Установка ЦТП
+                      </a>
+                    </li>
+                    <li class="part-services__item">
+                      <a href="ctp-proj.html" class="part-services__link"
+                        >Проектирование ЦТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="ctp-montazh.html" class="part-services__link"
+                        >Монтаж ЦТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="ctp-pusk.html" class="part-services__link"
+                        >Пуско-наладка ЦТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a
+                        href="ctp-posle-montazha.html"
+                        class="part-services__link"
+                        >Что дальше после монтажа ЦТП</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="item-services__part">
+                  <a href="itp.html" class="item-service__link">ИТП</a>
+                  <svg class="item-services__icon">
+                    <use xlink:href="img/sprite.svg#chevron_right"></use>
+                  </svg>
+                  <ul ul class="part-services__list">
+                    <li class="part-services__item">
+                      <a href="itp-ustanovka.html" class="part-services__link"
+                        >Установка ИТП
+                      </a>
+                    </li>
+                    <li class="part-services__item">
+                      <a href="itp-proj.html" class="part-services__link"
+                        >Проектирование ИТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="itp-montazh.html" class="part-services__link"
+                        >Монтаж ИТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="itp-pusk.html" class="part-services__link"
+                        >Пуско-наладка ИТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a
+                        href="itp-posle-montazha.html"
+                        class="part-services__link"
+                        >Что дальше после монтажа ИТП</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="item-services__part">
+                  <a href="btp.html" class="item-service__link">БТП</a>
+
+                  <svg class="item-services__icon">
+                    <use xlink:href="img/sprite.svg#chevron_right"></use>
+                  </svg>
+                  <ul ul class="part-services__list">
+                    <li class="part-services__item">
+                      <a href="btp-ustanovka.html" class="part-services__link"
+                        >Установка
+                      </a>
+                    </li>
+                    <li class="part-services__item">
+                      <a href="btp-proj.html" class="part-services__link"
+                        >Проектирование БТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="btp-montazh.html" class="part-services__link"
+                        >Монтаж БТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="btp-pusk.html" class="part-services__link"
+                        >Пуско-наладка БТП</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a
+                        href="btp-posle-montazha.html"
+                        class="part-services__link"
+                        >Что дальше после монтажа БТП</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="item-services__part">
+                  <a
+                    href="elevator-reguliruyemyy.html"
+                    class="item-service__link"
+                    >Элеватор регулируемый</a
+                  >
+                  <svg class="item-services__icon">
+                    <use xlink:href="img/sprite.svg#chevron_right"></use>
+                  </svg>
+                  <ul ul class="part-services__list">
+                    <li class="part-services__item">
+                      <a
+                        href="elevator-ustanovka.html"
+                        class="part-services__link"
+                        >Установка элеватора регулируемого
+                      </a>
+                    </li>
+                    <li class="part-services__item">
+                      <a href="elevator-proj.html" class="part-services__link"
+                        >Проектирование элеватора регулируемого</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a
+                        href="elevator-montazh.html"
+                        class="part-services__link"
+                        >Монтаж элеватора регулируемого</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a href="elevator-pusk.html" class="part-services__link"
+                        >Пуско-наладка элеватора регулируемого</a
+                      >
+                    </li>
+                    <li class="part-services__item">
+                      <a
+                        href="elevator-posle-montazha.html"
+                        class="part-services__link"
+                        >Что дальше после монтажа элеватора регулируемого</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="services__item item-services">
+              <a href="yyte.html" class="services__link"
+                >УУТЭ — Приборы учета</a
+              >
+              <svg class="item-services__icon">
+                <use xlink:href="img/sprite.svg#chevron_right"></use>
+              </svg>
+              <ul class="item-services__list">
+                <li class="item-services__part">
+                  <a href="yyte-ustanovka.html" class="item-services__link"
+                    >Установка УУТЭ</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a href="yyte-proj.html" class="item-services__link"
+                    >Проектирование УУТЭ</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a href="yyte-montazh.html" class="item-services__link"
+                    >Монтаж УУТЭ</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a href="yyte-posle-montazha.html" class="item-services__link"
+                    >Что дальше после монтажа УУТЭ</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="services__item item-services">
+              <a href="teploobmenniki.html" class="services__link"
+                >Теплообменники</a
+              >
+              <svg class="item-services__icon">
+                <use xlink:href="img/sprite.svg#chevron_right"></use>
+              </svg>
+              <ul class="item-services__list">
+                <li class="item-services__part">
+                  <a
+                    href="teploobmenniki-ustanovka.html"
+                    class="item-services__link"
+                    >Установка теплообменника на систему отопления</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a
+                    href="teploobmenniki-ustanovka-gvs.html"
+                    class="item-services__link"
+                    >Установка теплообменников на ГВС</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a
+                    href="teploobmenniki-montazh.html"
+                    class="item-services__link"
+                    >Монтаж теплообменников</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a href="teploobmenniki-proj.html" class="item-services__link"
+                    >Проектирование теплообменников</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a
+                    href="teploobmenniki-kozhuhotrubnyy.html"
+                    class="item-services__link"
+                    >Кожухотрубный теплообменник. Отличие</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a
+                    href="teploobmenniki-plastinchatyy.html"
+                    class="item-services__link"
+                    >Пластинчатый теплообменник. Отличие</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a
+                    href="teploobmenniki-posle-montazha.html"
+                    class="item-services__link"
+                    >Что дальше после монтажа теплообменников</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="services__item item-services">
+              <a
+                href="avtomatizatsiya-i-balansirovka.html"
+                class="services__link"
+                >Автоматизация и балансировка</a
+              >
+              <svg class="item-services__icon">
+                <use xlink:href="img/sprite.svg#chevron_right"></use>
+              </svg>
+              <ul class="item-services__list">
+                <li class="item-services__part">
+                  <a href="avtomatizatsiya.html" class="item-services__link"
+                    >Автоматизация отопления МКД</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a href="balansirovka.html" class="item-services__link"
+                    >Балансировка отопления МКД</a
+                  >
+                </li>
+                <li class="item-services__part">
+                  <a href="avtomatizatsiya-gvs.html" class="item-services__link">Автоматизация ГВС</a>
+                </li>
+                <li class="item-services__part">
+                  <a href="avtomatizatsiya-hvs.html" class="item-services__link">Автоматизация ХВС</a>
+                </li>
+              </ul>
+            </li>
+            <li class="services__item">
+              <a href="dlya-uk.html" class="services__link">Для УК</a>
+            </li>
+            <li class="services__item">
+              <a href="dlya-tszh.html" class="services__link">Для ТСЖ</a>
+            </li>
+            <li class="services__item">
+              <a href="dlya-zhiteley.html" class="services__link">Для жителей</a>
+            </li>
+            <li class="services__item">
+              <a href="dlya-predpriyatiy.html" class="services__link"
+                >Для производственных предприятий</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="header-menu__item">
+          <a href="video.html" class="header-menu__link">Видео</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="gallery.html" class="header-menu__link">Фото</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="reviews.html" class="header-menu__link">Отзывы</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="FAQ.html" class="header-menu__link">Частые вопросы</a>
+        </li>
+        <li class="header-menu__item">
+          <a href="contacts.html" class="header-menu__link">Контакты</a>
+        </li>
+      </menu>
+    </div>
+  </div>
+</div>
+
+    <main class="main">
+      <section class="product">
+  <div class="container">
+    <nav class="product__breadcrumbs breadcrumbs">
+      <a href="index.html" class="breadcrumbs__link">Главная</a>
+      <a href="service-main.html" class="breadcrumbs__link">Услуги</a>
+      <a
+        href="dlya-zhiteley.html"
+        class="breadcrumbs__link breadcrumbs__link--active"
+        >Для жителей </a
+      >
+    </nav>
+    <h1 class="product__title">Для жителей</h1>
+    <div class="product__item1 item1">
+      <a href="img/img1.jpg" data-fancybox data-width="2548" data-height="1065">
+        <img loading="lazy" src="img/img1.jpg" class="image" alt="img1" />
+      </a>
+      <p class="item1__text">
+        Высокий уровень вовлечения представителей целевой аудитории является
+        четким доказательством простого факта: укрепление и развитие внутренней
+        структуры, а также свежий взгляд на привычные вещи — безусловно
+        открывает новые горизонты для системы массового участия. Значимость этих
+        проблем настолько очевидна, что повышение уровня гражданского сознания
+        предопределяет высокую востребованность инновационных методов управления
+        процессами.
+      </p>
+    </div>
+    <div class="product__item2 item2">
+      <a href="img/img2.jpg" data-fancybox data-width="2048" data-height="1365">
+        <img loading="lazy" src="img/img2.jpg" class="image" alt="img2" />
+      </a>
+      <p class="item2__text">
+        Имеется спорная точка зрения, гласящая примерно следующее: представители
+        современных социальных резервов обнародованы. Не следует, однако,
+        забывать, что глубокий уровень погружения способствует подготовке и
+        реализации экономической целесообразности принимаемых решений. Не
+        следует, однако, забывать, что синтетическое тестирование позволяет
+        выполнить важные задания по разработке переосмысления
+        внешнеэкономических политик. Есть над чем задуматься: многие известные
+        личности, которые представляют собой яркий пример
+        континентально-европейского типа политической культуры, будут ограничены
+        исключительно образом мышления. Высокий уровень вовлечения
+        представителей целевой аудитории является четким доказательством
+        простого факта: консультация с широким активом прекрасно подходит для
+        реализации соответствующих условий активизации. Значимость этих проблем
+        настолько очевидна, что реализация намеченных плановых заданий требует
+        определения и уточнения направлений прогрессивного развития. Сложно
+        сказать, почему диаграммы связей, вне зависимости от их.
+      </p>
+    </div>
+    <p class="product__text">
+      Для современного мира укрепление и развитие внутренней структуры позволяет
+      выполнить важные задания по разработке поэтапного и последовательного
+      развития общества. А ещё независимые государства могут быть объявлены
+      нарушающими общечеловеческие нормы этики и морали. Вот вам яркий пример
+      современных тенденций — повышение уровня гражданского сознания играет
+      определяющее значение для соответствующих условий активизации. Наше дело
+      не так однозначно, как может показаться: базовый вектор развития
+      предоставляет широкие возможности для экономической целесообразности
+      принимаемых решений. И нет сомнений, что реплицированные с зарубежных
+      источников, современные исследования подвергнуты целой серии независимых
+      исследований. Повседневная практика показывает, что укрепление и развитие
+      внутренней структуры выявляет срочную потребность инновационных методов
+      управления процессами.
+    </p>
+    <div class="product__item3 item3">
+      <div class="item3__description">
+        <h3 class="item3__subtitle">Подзаголовок</h3>
+        <p class="item3__text">
+          Картельные сговоры не допускают ситуации, при которой реплицированные
+          с зарубежных источников, современные исследования смешаны с не
+          уникальными данными до степени совершенной неузнаваемости, из-за чего
+          возрастает их статус бесполезности.
+        </p>
+        <h3 class="item3__subtitle">Подзаголовок</h3>
+        <p class="item3__text">
+          С учётом сложившейся международной обстановки, семантический разбор
+          внешних противодействий однозначно определяет каждого участника как
+          способного принимать собственные решения касаемо распределения
+          внутренних резервов и ресурсов. В частности, синтетическое
+          тестирование требует определения и уточнения благоприятных перспектив.
+          Имеется спорная точка зрения, гласящая примерно следующее:
+          непосредственные участники технического прогресса указаны как
+          претенденты на роль ключевых факторов.
+        </p>
+      </div>
+      <a href="img/img3.jpg" data-fancybox data-width="2048" data-height="1365">
+        <img loading="lazy" src="img/img3.jpg" class="image" alt="img3" />
+      </a>
+    </div>
+    <button class="btn-reset product__btn btn" data-path="calc">
+      Заказать расчет стоимости
+    </button>
+    <div class="product__modal modal" data-target="calc">
+      <div
+        class="modal__container"
+        role="dialog"
+        aria-modal="true"
+        data-target="calc"
+      >
+        <button
+          class="btn-reset js-modal-close modal__close"
+          aria-label="Закрыть модальное окно"
+        ></button>
+        <div class="modal__content prod-modal">
+          <span class="prod-modal__title">Заказать расчет</span>
+          <form action="#" class="form-calc">
+            <label class="form-calc__label">
+              <input
+                type="text"
+                name="Имя"
+                class="input-reset form-calc__input"
+                placeholder="Имя*"
+                required
+              />
+            </label>
+            <label class="form-calc__label">
+              <input
+                type="text"
+                name="телефон"
+                class="input-reset form-calc__input"
+                placeholder="Телефон*"
+                required
+              />
+            </label>
+            <label class="form-calc__label">
+              <textarea
+                name="Сообщение"
+                class="input-reset form-calc__text-area form-calc__input--textarea"
+                placeholder="Сообщение"
+              ></textarea>
+            </label>
+            <div class="form-calc__file file">
+              <div class="file__file-load">
+                <span class="file__palceholder"
+                  >Загрузите тех.условия, проекты и другие файлы</span
+                >
+              </div>
+              <label class="file__label file__label--file">
+                <input
+                  type="file"
+                  name="file"
+                  multiple
+                  class="input-reset file__input file__input--file"
+                />
+              </label>
+            </div>
+            <label class="custom-checkbox">
+              <input
+                type="checkbox"
+                checked
+                disabled
+                class="custom-checkbox__field"
+              />
+              <span class="custom-checkbox__content"
+                >Согласие на обработку персональных данных</span
+              >
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" class="custom-checkbox__field" />
+              <span class="custom-checkbox__content">Я не робот</span>
+            </label>
+            <button type="submit" class="btn-reset form-calc__btn btn">
+              Отправить
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="product__item4 item4">
+      <h2 class="item4__title">Заголовок</h2>
+      <p class="item4__text">
+        Для современного мира укрепление и развитие внутренней структуры
+        позволяет выполнить важные задания по разработке поэтапного и
+        последовательного развития общества. А ещё независимые государства могут
+        быть объявлены нарушающими общечеловеческие нормы этики и морали. Вот
+        вам яркий пример современных тенденций — повышение уровня гражданского
+        сознания играет определяющее значение для соответствующих условий
+        активизации. Наше дело не так однозначно, как может показаться: базовый
+        вектор развития предоставляет широкие возможности для экономической
+        целесообразности принимаемых решений. И нет сомнений, что
+        реплицированные с зарубежных источников, современные исследования
+        подвергнуты целой серии независимых исследований. Повседневная практика
+        показывает, что укрепление и развитие внутренней структуры выявляет
+        срочную потребность инновационных методов управления процессами.
+      </p>
+      <a href="img/img4.jpg" data-fancybox data-width="2548" data-height="1065">
+        <img loading="lazy" src="img/img4.jpg" class="image" alt="img1" />
+      </a>
+      <p class="item4__text">
+        Вот вам яркий пример современных тенденций — повышение уровня
+        гражданского сознания играет определяющее значение для соответствующих
+        условий активизации. Наше дело не так однозначно, как может показаться:
+        базовый вектор развития предоставляет широкие возможности для
+        экономической целесообразности принимаемых решений. И нет сомнений, что
+        реплицированные с зарубежных источников, современные исследования
+        подвергнуты целой серии независимых исследований.
+      </p>
+    </div>
+    <form
+      action="#"
+      class="product__form form-type1"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="form-type1__title">
+        Написать нам просто — мы даже подготовили письмо
+        <svg
+          width="38"
+          height="38"
+          viewBox="0 0 38 38"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 21L24.9167 28.9167L32.8333 21"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+          />
+          <path
+            d="M5 11H25V27"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+          />
+        </svg>
+      </div>
+      <div class="form-type1__wrap">
+        <label class="form-type1__label">
+          Здравствуйте, я
+          <input
+            type="text"
+            name="Имя"
+            class="input-reset form-type1__input"
+            placeholder="Ваше имя"
+            required
+          />
+        </label>
+        <label class="form-type1__label">
+          Нам нужно сделать
+          <textarea
+            name="Сообщение"
+            class="input-reset form-type1__text-area"
+            placeholder="Опишите задачу"
+            required
+          ></textarea>
+        </label>
+        <label class="form-type1__label">
+          Свяжитесь со мной: вот почта
+          <input
+            type="mail"
+            name="E-mail"
+            class="input-reset form-type1__input"
+            placeholder="email"
+          />
+        </label>
+        <label class="form-type1__label">
+          и телефон
+          <input
+            type="tel"
+            name="Телефон"
+            class="input-reset form-type1__input"
+            placeholder="+7 999 999 99 99"
+          />
+        </label>
+      </div>
+
+      <button class="btn-reset form-type1__btn btn">Отправить письмо</button>
+    </form>
+    <form
+      action="#"
+      class="product__form form-type2"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="form-type2__title">
+        Написать нам просто — мы даже подготовили письмо
+        <svg
+          width="38"
+          height="38"
+          viewBox="0 0 38 38"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17 21L24.9167 28.9167L32.8333 21"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+          />
+          <path
+            d="M5 11H25V27"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="square"
+          />
+        </svg>
+      </div>
+      <div class="form-type2__wrap">
+        <label class="form-type2__label">
+          Здравствуйте, я
+          <input
+            type="text"
+            name="Имя"
+            class="input-reset form-type2__input"
+            placeholder="Ваше имя"
+            required
+          />
+        </label>
+        <label class="form-type2__label">
+          Нам нужно сделать
+          <textarea
+            name="Сообщение"
+            class="input-reset form-type2__text-area"
+            placeholder="Опишите задачу"
+            required
+          ></textarea>
+        </label>
+        <label class="form-type2__label">
+          Свяжитесь со мной: вот почта
+          <input
+            type="mail"
+            name="Имя"
+            class="input-reset form-type2__input"
+            placeholder="email"
+          />
+        </label>
+        <label class="form-type2__label">
+          и телефон
+          <input
+            type="tel"
+            name="Телефон"
+            class="input-reset form-type2__input"
+            placeholder="+7 999 999 99 99"
+          />
+        </label>
+      </div>
+
+      <button class="btn-reset form-type2__btn btn">Отправить письмо</button>
+    </form>
+    <div class="product__video video1">
+      <h2 class="video1__title">
+        Что необходимо знать про регулируемые элеваторы в ТСЖ, МКД
+      </h2>
+      <button class="btn-reset video1__link video__link" data-link="1">
+        Смотреть видео
+      </button>
+      <div class="video1__inner inner">
+        <video
+          src="video/video.mp4"
+          class="video1__item"
+          poster="img/video_post.jpg"
+          width="1218"
+          height="675"
+          data-video="1"
+        ></video>
+        <button class="video1__btn btn-play btn-reset" data-play="1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <path
+              d="M49.9998 97.3682C76.1606 97.3682 97.3682 76.1606 97.3682 49.9998C97.3682 23.8389 76.1606 2.63135 49.9998 2.63135C23.8389 2.63135 2.63135 23.8389 2.63135 49.9998C2.63135 76.1606 23.8389 97.3682 49.9998 97.3682Z"
+              fill="white"
+            />
+            <path
+              d="M65.7894 49.9999L39.4736 34.2104V65.7894L65.7894 49.9999Z"
+              fill="#1FAB58"
+              stroke="#1FAB58"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="product__video video2">
+      <div class="video2__description description">
+        <h3 class="description__title">
+          Что необходимо знать про регулируемые элеваторы в ТСЖ, МКД
+        </h3>
+        <button class="btn-reset description__link video__link" data-link="2">
+          Смотреть видео
+        </button>
+        <p class="description__text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          alias accusamus quidem repellendus. Error dolor maiores, cum et
+          obcaecati temporibus officiis quam repellendus id! Nostrum libero quo
+          dolore vero soluta!
+        </p>
+      </div>
+      <div class="video2__inner inner">
+        <video
+          src="video/video.mp4"
+          class="video2__item"
+          poster="img/video_post.jpg"
+          width="802"
+          height="448"
+          data-video="2"
+        ></video>
+        <button class="video2__btn btn-play btn-reset" data-play="2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <path
+              d="M49.9998 97.3682C76.1606 97.3682 97.3682 76.1606 97.3682 49.9998C97.3682 23.8389 76.1606 2.63135 49.9998 2.63135C23.8389 2.63135 2.63135 23.8389 2.63135 49.9998C2.63135 76.1606 23.8389 97.3682 49.9998 97.3682Z"
+              fill="white"
+            />
+            <path
+              d="M65.7894 49.9999L39.4736 34.2104V65.7894L65.7894 49.9999Z"
+              fill="#1FAB58"
+              stroke="#1FAB58"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="product__video video3">
+      <div class="video3__description description">
+        <h3 class="description__title">
+          Что необходимо знать про регулируемые элеваторы в ТСЖ, МКД
+        </h3>
+        <button class="btn-reset description__link video__link" data-link="3">
+          Смотреть видео
+        </button>
+      </div>
+      <div class="video3__inner inner">
+        <video
+          src="video/video.mp4"
+          class="video3__item"
+          poster="img/video_post.jpg"
+          width="594"
+          height="329"
+          data-video="3"
+        ></video>
+        <button class="video3__btn btn-play btn-reset" data-play="3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            viewBox="0 0 100 100"
+            fill="none"
+          >
+            <path
+              d="M49.9998 97.3682C76.1606 97.3682 97.3682 76.1606 97.3682 49.9998C97.3682 23.8389 76.1606 2.63135 49.9998 2.63135C23.8389 2.63135 2.63135 23.8389 2.63135 49.9998C2.63135 76.1606 23.8389 97.3682 49.9998 97.3682Z"
+              fill="white"
+            />
+            <path
+              d="M65.7894 49.9999L39.4736 34.2104V65.7894L65.7894 49.9999Z"
+              fill="#1FAB58"
+              stroke="#1FAB58"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="product__certificate certificate">
+      <div class="certificate__swiper swiper-certificate">
+        <div class="swiper-certificate__wrapper swiper-wrapper">
+          <div class="swiper-certificate__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="swiper-certificate__paginatin"></div>
+        <div class="swiper-certificate__btn-prev btn-prev">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="arrow_left">
+              <circle
+                id="Ellipse 1"
+                cx="20"
+                cy="20"
+                r="20"
+                fill="#F5F5F5"
+                stroke-width="0"
+              />
+              <path
+                id="Vector"
+                d="M17 10L27 20L17 30"
+                stroke="#7D7D7D"
+                stroke-width="2"
+                stroke-linecap="square"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="swiper-certificate__btn-next btn-next">
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="arrow_left">
+              <circle
+                id="Ellipse 1"
+                cx="20"
+                cy="20"
+                r="20"
+                fill="#F5F5F5"
+                stroke-width="0"
+              />
+              <path
+                id="Vector"
+                d="M17 10L27 20L17 30"
+                stroke="#7D7D7D"
+                stroke-width="2"
+                stroke-linecap="square"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="certificate__desc desc-certificate">
+        <h3 class="desc-certificate__title">Заголовок</h3>
+        <p class="desc-certificate__text">
+          Для современного мира укрепление и развитие внутренней структуры
+          позволяет выполнить важные задания по разработке поэтапного и
+          последовательного развития общества. А ещё независимые государства
+          могут быть объявлены нарушающими общечеловеческие нормы этики и
+          морали.
+        </p>
+        <ul class="desc-certificate__list">
+          <li class="desc-certificate__list-item">
+            Ясность нашей позиции очевидна: консультация с широким активом
+            предопределяет высокую востребованность анализа существующих
+            паттернов поведения.
+          </li>
+          <li class="desc-certificate__list-item">
+            В рамках спецификации современных стандартов, предприниматели в сети
+            интернет являются только методом политического участия и
+            ассоциативно распределены по отраслям!
+          </li>
+          <li class="desc-certificate__list-item">
+            Принимая во внимание показатели успешности, высокое качество
+            позиционных исследований требует от нас анализа новых принципов
+            формирования материально-технической и кадровой базы.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="swiper__container">
+      <div class="certificate__swiper swiper-certificate1">
+        <div class="swiper-certificate1__wrapper swiper-wrapper">
+          <div class="swiper-certificate1__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery-1"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate1__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery-1"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate1__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery-1"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate1__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery-1"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-certificate1__slide slide">
+            <a
+              href="img/certificate-img.png"
+              data-fancybox="gallery-1"
+              data-width="1048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/certificate-img.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="swiper-certificate1__paginatin"></div>
+      </div>
+      <div class="swiper-certificate1__btn-prev btn-prev">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="swiper-certificate1__btn-next btn-next">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="slider">
+      <h2 class="slider__title">Заголовок</h2>
+      <p class="slider__text">
+        Повседневная практика показывает, что укрепление и развитие внутренней
+        структуры выявляет срочную потребность инновационных методов управления
+        процессами.
+      </p>
+      <div class="slider__swiper swiper-img">
+        <div class="swiper-img__wrapper swiper-wrapper">
+          <div class="swiper-img__slide">
+            <a
+              href="img/swiper-img1.png"
+              data-fancybox="gallery-2"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img1.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-img__slide">
+            <a
+              href="img/swiper-img2.png"
+              data-fancybox="gallery-2"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img2.png"
+                class="image"
+                alt="img1"
+            /></a>
+          </div>
+          <div class="swiper-img__slide">
+            <a
+              href="img/swiper-img3.png"
+              data-fancybox="gallery-2"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img3.png"
+                class="image"
+                alt="img1"
+            /></a>
+          </div>
+        </div>
+        <div class="swiper-certificate1__paginatin"></div>
+      </div>
+      <div class="swiper-img__btn-prev btn-prev">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="swiper-img__btn-next btn-next">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="slider1">
+      <div class="slider1__swiper swiper1-img">
+        <div class="swiper1-img__wrapper swiper-wrapper">
+          <div class="swiper-img__slide">
+            <a
+              href="img/swiper-img1.png"
+              data-fancybox="gallery-3"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img1.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+          </div>
+          <div class="swiper-img__slide">
+            <a
+              href="img/swiper-img2.png"
+              data-fancybox="gallery-3"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img2.png"
+                class="image"
+                alt="img1"
+            /></a>
+          </div>
+          <div class="swiper-img__slide">
+            <a
+              href="img/swiper-img3.png"
+              data-fancybox="gallery-3"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img3.png"
+                class="image"
+                alt="img1"
+            /></a>
+          </div>
+        </div>
+        <div class="swiper-certificate1__paginatin"></div>
+      </div>
+      <div class="swiper1-img__btn-prev btn-prev">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="swiper1-img__btn-next btn-next">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="slider2">
+      <h2 class="slider2__title">Заголовок</h2>
+      <p class="slider2__text">
+        Повседневная практика показывает, что укрепление и развитие внутренней
+        структуры выявляет срочную потребность инновационных методов управления
+        процессами.
+      </p>
+      <div class="slider2__swiper swiper2-img">
+        <div class="swiper-img__wrapper swiper-wrapper">
+          <div class="swiper2-img__slide">
+            <a
+              href="img/swiper-img1.png"
+              data-fancybox="gallery-4"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img1.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+            <p class="swiper2-img__description">Подпись к картинке</p>
+          </div>
+          <div class="swiper2-img__slide">
+            <a
+              href="img/swiper-img2.png"
+              data-fancybox="gallery-4"
+              data-width="2048"
+              data-height="1365"
+            >
+              <img
+                loading="lazy"
+                src="img/swiper-img2.png"
+                class="image"
+                alt="img1"
+              />
+            </a>
+            <p class="swiper2-img__description">Подпись к картинке</p>
+          </div>
+          <div class="swiper2-img__slide">
+            <video
+              class="swiper2-img__video video"
+              src="video/video.mp4"
+              poster="img/swiper-img3.png"
+            ></video>
+            <button class="swiper2-img__btn btn-play btn-reset">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+              >
+                <path
+                  d="M20.0001 38.9475C30.4644 38.9475 38.9475 30.4644 38.9475 20.0001C38.9475 9.53576 30.4644 1.05273 20.0001 1.05273C9.53576 1.05273 1.05273 9.53576 1.05273 20.0001C1.05273 30.4644 9.53576 38.9475 20.0001 38.9475Z"
+                  fill="white"
+                />
+                <path
+                  d="M26.3159 20.0004L15.7896 13.6846V26.3161L26.3159 20.0004Z"
+                  fill="#1FAB58"
+                  stroke="#1FAB58"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <p class="swiper2-img__description">Подпись к видео</p>
+          </div>
+        </div>
+        <div class="swiper-certificate1__paginatin"></div>
+      </div>
+      <div class="slider2__btn-prev btn-prev">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+      <div class="slider2__btn-next btn-next">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="arrow_left">
+            <circle
+              id="Ellipse 1"
+              cx="20"
+              cy="20"
+              r="20"
+              fill="#F5F5F5"
+              stroke-width="0"
+            />
+            <path
+              id="Vector"
+              d="M17 10L27 20L17 30"
+              stroke="#7D7D7D"
+              stroke-width="2"
+              stroke-linecap="square"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="product__chat chat">
+      <button class="chat__btn btn-reset"></button>
+      <div class="chat__inner">
+        <div class="chat__header header-chat">
+          <img src="img/chat-bg.png" alt="icon" class="header-chat__img" />
+          <div class="header-chat__title">
+            <span class="header-chat__name">Светлана Рогова</span>
+            <span class="header-chat__position">Консультант</span>
+          </div>
+          <button class="header-chat__close btn-reset">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+            >
+              <path
+                d="M18 18.5L6 6.5"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M18 6.5L6 18.5"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="chat__main main-chat">
+          <p class="main-chat__messenge">
+            Сейчас очередь сводобна. Я могу помочь разобраться в вашем вопросе
+            онлайн! Пишите!
+            <span class="main-chat__time">10:27</span>
+          </p>
+        </div>
+        <div class="chat__footer footer-chat">
+          <div class="file__file-load form-chat__load"></div>
+          <form class="footer-chat__form form-chat">
+            <label class="file__label">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_101_732)">
+                  <path
+                    d="M4.47598 17.2284V7.47842C4.47598 4.57893 6.82649 2.22842 9.72598 2.22842C12.6255 2.22842 14.976 4.57893 14.976 7.47842V18.7284C14.976 20.6614 13.409 22.2284 11.476 22.2284C9.54298 22.2284 7.97598 20.6614 7.97598 18.7284L7.97598 7.47842C7.97598 6.51193 8.75948 5.72842 9.72598 5.72842C10.6925 5.72842 11.476 6.51193 11.476 7.47842V17.2284"
+                    stroke="#1FAB58"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_101_732">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <input
+                type="file"
+                name="file"
+                multiple
+                class="input-reset file__input file__input--file form-chat__input"
+              />
+            </label>
+            <label class="form-chat__label">
+              <textarea
+                name="Сообщение"
+                class="input-reset form-chat__text-area form-chat__input--textarea"
+                placeholder="Ваш вопрос"
+              ></textarea>
+            </label>
+            <button type="submit" class="btn-reset form-chat__btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.47036 3.11952C4.67304 2.69741 3.7685 3.46367 4.05379 4.31953L6.19467 10.7422H11.7422C12.2945 10.7422 12.7422 11.1899 12.7422 11.7422C12.7422 12.2945 12.2945 12.7422 11.7422 12.7422H6.19484L4.05379 19.1653C3.7685 20.0212 4.67304 20.7874 5.47036 20.3653L20.0887 12.6262C20.7982 12.2506 20.7982 11.2342 20.0887 10.8586L5.47036 3.11952Z"
+                  fill="#1FAB58"
+                />
+              </svg>
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">ООО «ТеплоПро» 2014-2023</div>
+      <ul class="footer__list list-items">
+        <li class="list-items__item">
+          <a href="index.html" class="list-items__link">О компании</a>
+        </li>
+        <li class="list-items__item">
+          <a href="FAQ.html" class="list-items__link">Частые вопросы</a>
+        </li>
+        <li class="list-items__item">
+          <a href="contacts.html" class="list-items__link">Контакты</a>
+        </li>
+      </ul>
+      <div class="footer__contacts contacts-footer">
+        <a href="tel:+70000000000" class="contacts-footer__link">+7 (000-00) 0-00-00
+          </a>
+        <a href="mailto:...@ya.ru" class="contacts-footer__link">…@ya.ru</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  </div>
+</body>
+</html>
