@@ -10,6 +10,7 @@
     <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
   </head>
@@ -563,14 +564,9 @@
     <ul class="video__list">
       <li class="video__item item-video">
         <div class="item-video__inner">
-          <video
-            src="video/video.mp4"
-            class="item-video__player"
-            width="386"
-            height="270"
-            poster="img/service-card/img3.jpg"
-            data-video="1"
-          ></video>
+          <a href="video/video.mp4" data-fancybox data-width="700" data-height="410">
+            <img src="img/swiper-img3.png" alt="video-poster" class="image"
+          /></a>
           <button class="item-video__btn btn-play btn-reset" data-play="1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -607,15 +603,9 @@
       </li>
       <li class="video__item item-video">
         <div class="item-video__inner">
-          <video
-            src="video/video.mp4"
-            class="item-video__player"
-            width="386"
-            height="270"
-            poster="img/service-card/img1.jpg"
-            data-video="2"
-
-          ></video>
+          <a href="video/video.mp4" data-fancybox data-width="700" data-height="410">
+            <img src="img/swiper-img3.png" alt="video-poster" class="image"
+          /></a>
           <button class="item-video__btn btn-play btn-reset" data-play="2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -651,14 +641,9 @@
       </li>
       <li class="video__item item-video">
         <div class="item-video__inner">
-          <video
-            src="video/video.mp4"
-            class="item-video__player"
-            width="386"
-            height="270"
-            poster="img/service-card/img2.jpg"
-            data-video="3"
-          ></video>
+          <a href="video/video.mp4" data-fancybox data-width="700" data-height="410">
+            <img src="img/swiper-img3.png" alt="video-poster" class="image"
+          /></a>
           <button class="item-video__btn btn-play btn-reset" data-play="3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -724,5 +709,7 @@
 </footer>
 
   </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </body>
 </html>

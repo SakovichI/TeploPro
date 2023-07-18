@@ -10,6 +10,7 @@
     <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
   </head>
@@ -562,7 +563,36 @@
     <h1 class="reviews__title">Отзывы</h1>
     <div class="reviews__inner">
       <div class="review">
-        <img src="img/avatar.svg" alt="avatar" class="review__img" />
+        <a
+          href="video/video.mp4"
+          data-fancybox
+          data-width="700"
+          data-height="410"
+        >
+          <img src="img/avatar.png" alt="video-poster" class="review__img" />
+          <button class="review__btn btn-play btn-reset">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+            >
+              <path
+                d="M20.0001 38.9475C30.4644 38.9475 38.9475 30.4644 38.9475 20.0001C38.9475 9.53576 30.4644 1.05273 20.0001 1.05273C9.53576 1.05273 1.05273 9.53576 1.05273 20.0001C1.05273 30.4644 9.53576 38.9475 20.0001 38.9475Z"
+                fill="white"
+              />
+              <path
+                d="M26.3159 20.0004L15.7896 13.6846V26.3161L26.3159 20.0004Z"
+                fill="#1FAB58"
+                stroke="#1FAB58"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg></button
+        ></a>
+
         <div class="review__description description-review">
           <span class="description-review__title">Алексей</span>
           <p class="description-review__text">
@@ -574,7 +604,7 @@
         </div>
       </div>
       <div class="review">
-        <img src="img/avatar.svg" alt="avatar" class="review__img" />
+        <img src="img/avatar.png" alt="avatar" class="review__img" />
         <div class="review__description description-review">
           <span class="description-review__title">Степан</span>
           <p class="description-review__text">
@@ -587,7 +617,7 @@
         </div>
       </div>
       <div class="review">
-        <img src="img/avatar.svg" alt="avatar" class="review__img" />
+        <img src="img/avatar.png" alt="avatar" class="review__img" />
         <div class="review__description description-review">
           <span class="description-review__title">Алина</span>
           <p class="description-review__text">
@@ -628,5 +658,7 @@
 </footer>
 
   </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </body>
 </html>
