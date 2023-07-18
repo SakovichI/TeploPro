@@ -1581,11 +1581,9 @@
             <p class="swiper2-img__description">Подпись к картинке</p>
           </div>
           <div class="swiper2-img__slide">
-            <video
-              class="swiper2-img__video video"
-              src="video/video.mp4"
-              poster="img/swiper-img3.png"
-            ></video>
+            <a href="video/video.mp4" data-fancybox data-width="700" data-height="410">
+              <img src="img/swiper-img3.png" alt="video-poster" class="image"
+            /></a>
             <button class="swiper2-img__btn btn-play btn-reset">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1800,5 +1798,7 @@
 </footer>
 
   </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </body>
 </html>
