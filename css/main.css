@@ -296,10 +296,10 @@ p {
 }
 
 .btn-play {
-  pointer-events: none;
   -webkit-transform: translate(-50%, -50%) scale(1);
   -ms-transform: translate(-50%, -50%) scale(1);
   transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
@@ -308,6 +308,7 @@ p {
   -webkit-transform: translate(-50%, -50%) scale(0);
   -ms-transform: translate(-50%, -50%) scale(0);
   transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
@@ -3107,13 +3108,12 @@ button.swiper-pagination-bullet {
   position: relative;
 }
 .swiper2-img__slide img {
-  width: 150px;
+  width: 350px;
   height: auto;
 }
 .swiper2-img__video {
-  display: none;
-  width: 150px;
-  height: auto;
+  width: 350px;
+  height: 250px;
 }
 .swiper2-img__description {
   color: var(--main-txt);
